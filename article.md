@@ -1,8 +1,8 @@
-This post is not a basic intro to Docker. If you are looking to do a really awesome tutorial on your local machine using Virtual Box
+In this post, we will be building a Docker image and running it on AWS. If you are looking to do a really awesome tutorial on your local machine using Virtual Box
 [Awesome GET STARTED with Docker and Node](https://airpair.com/node.js/posts/getting-started-with-docker-for-the-nodejs-dev "AirPair Posts")
 
 ## What to expect and why am I doing it 
-I was introduced to Docker and found it very fascinating. So I created a tutorial for all those that want to host their app on AWS via Docker. I created a sample app (Angular, Mongo, Node), that enables you to rate an instructor, by pressing the simple LIKE (Heart Icon). 
+I created a tutorial for all those that want to host their app on AWS via Docker. I created a sample app (Angular, Mongo, Node), that enables you to rate an instructor, by pressing the simple LIKE (Heart Icon). 
 Using the app as our foundation, we will add the DOCKER stuff to it and make it go live on AWS. 
 
 ## Background - Raw Steps 
@@ -46,17 +46,18 @@ Your Web browser: http://localhost:8000
     
     
 ## AWS Sigup and our first instance 
-If you cloned the repo I prepared for you, you got the app now and after npm install you should be up and running on port: 8000.
-Now lets move from our local environment to the cloud. We all love flying in the clouds, so lets go with - AWS via Docker.
+If you cloned the repo I prepared for you, you got the app now and after npm install you should be up and running on port: 8000. - if not make sure you complete -> ### Local Host Test 
+Now lets move from our local environment to the cloud. We all love flying in the clouds, what better way then via Docker.
 
+<INSERT IMAGE FROM VIDEO>
 
 ### Signing up for AWS and configuration 
 
 
-Step 0) [Open this AWS guide - and keep it in one of your tabs :)](https://docs.docker.com/machine/drivers/aws/ "Configuration for AWS driver")
+I. [Open this AWS guide - and keep it in one of your tabs :)](https://docs.docker.com/machine/drivers/aws/ "Configuration for AWS driver")
     any of the flags/configurations that we will use - will all come from here 
-Step 1) [Create an AWS account FREE tier](https://aws.amazon.com/console/ "Amazon Console")
-Step 2) Keep your [access-id, secret-key and VPC id] handy
+II. [Create an AWS account FREE tier](https://aws.amazon.com/console/ "Amazon Console")
+III. Keep your [access-id, secret-key and VPC id] handy
 Here is how you can see you VPC ID
 [AWS VPCIP](https://www.evernote.com/l/AF3K_mYH59hD7IvA42598ZwyOYdSvfIOz9w)
 
@@ -76,7 +77,7 @@ export AWS_SECRET_ACCESS_KEY=<secret-key>
 export AWS_VPC_ID=<VPC id> 
 ```
 
-Don't you love it, one command and we can standup an instance on AWS. 'docker-machine create' will provision a host and create all the required keys for us 
+Next we will create a VM - using 'docker-machine create' will provision a host and create all the required keys for us 
 to be able to access the instance over SSH. Once the keys are issued, docker demon will be configured to accept remote connections.
 
 If you would like to see where the keys are stored, go to the following directory. On my machine, is here: 
@@ -143,6 +144,8 @@ Creating a docker file is easy, using your favourite code editor - create a new 
 
 Here is a sample environment that we will be working with for our app. Feel free to copy this into your local file (for the most part, all we are doing here 
 is creating an image - and moving files from our local system to the remote)
+
+<TODO UPDATE EXAMPLE>
 ```
 FROM node 
 
