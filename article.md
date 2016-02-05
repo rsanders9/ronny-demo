@@ -12,7 +12,9 @@ Using the app as our foundation, we will add the DOCKER stuff to it and make it 
     
 ### Before it begins
 
-I'll be referring to commands executed in your own terminal with:
+I'll be referring to commands executed in your own terminal with: What commands??
+
+
 
 ```
     $osxterm: command
